@@ -1,5 +1,9 @@
 class OrdersController < ApplicationController
 
+  def user_params
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  end
+
   def show
     @order = Order.find(params[:id])
   end
@@ -7,9 +11,10 @@ class OrdersController < ApplicationController
   def create
     charge = perform_stripe_charge
     order  = create_order(charge)
-
+    @order = Order.includes(line_items: [:product])
     if order.valid?
       empty_cart!
+      UserMailer.email_receipt(order, current_user).deliver_now
       redirect_to order, notice: 'Your Order has been placed.'
     else
       redirect_to cart_path, flash: { error: order.errors.full_messages.first }
