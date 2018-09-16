@@ -1,9 +1,9 @@
 class UserMailer < ApplicationMailer
-  default from: 'notifications@example.com'
+  default from: 'no-reply@jungle.com'
 
-  def welcome_email
-    @user = params[:user]
-    @url  = 'http://example.com/login'
-    mail(to: @user.email, subject: 'Welcome to My Awesome Site')
+  def email_receipt(order)
+    @order = order
+    @url  = 'localhost:3000/orders/:id'
+    mail(to: 'dummy@gmail.com', subject: 'Welcome to My Awesome Site')
   end
 end
