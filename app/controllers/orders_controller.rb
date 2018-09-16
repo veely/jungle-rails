@@ -11,7 +11,6 @@ class OrdersController < ApplicationController
   def create
     charge = perform_stripe_charge
     order  = create_order(charge)
-    @order = Order.includes(line_items: [:product])
     if order.valid?
       empty_cart!
       UserMailer.email_receipt(order, current_user).deliver_now
