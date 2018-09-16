@@ -14,7 +14,7 @@ class OrdersController < ApplicationController
     @order = Order.includes(line_items: [:product])
     if order.valid?
       empty_cart!
-      UserMailer.email_receipt(order, @order).deliver_now
+      UserMailer.email_receipt(order, current_user).deliver_now
       redirect_to order, notice: 'Your Order has been placed.'
     else
       redirect_to cart_path, flash: { error: order.errors.full_messages.first }
