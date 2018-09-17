@@ -1,0 +1,654 @@
+\q
+CREATE DATABASE test_db
+\c test_db;
+CREATE DATABASE test_db;
+\c test_db;
+\h
+CREATE DATABASE test_db;
+\c test_db;
+CREATE TABLE famous_people (
+id BIGSERIAL PRIMARY KEY,
+first_name VARCHAR(50),
+last_name VARCHAR(50),
+birthdate DATE
+);
+\h
+SELECT * FROM famous_people;
+INSERT INTO famous_people (first_name, last_name, birthdate)
+  VALUES ('Abraham', 'Lincoln', '1809-02-12');
+INSERT INTO famous_people (first_name, last_name, birthdate)
+  VALUES ('Mahatma', 'Gandhi', '1869-10-02');
+INSERT INTO famous_people (first_name, last_name, birthdate)
+  VALUES ('Paul', 'Rudd', '1969-04-06');
+INSERT INTO famous_people (first_name, last_name, birthdate)
+  VALUES ('Paul', 'Giamatti', '1967-06-06');
+SELECT * FROM famous_people;
+\q
+\c test_db
+\q
+\h
+\c test_db
+SELECT * FROM famous_people
+show
+\h
+;
+\q
+\c test_db
+select * from famous_people
+;
+\q
+\c famous_people
+\c test_db
+select * from famous_people;
+delete from famous_people where first_name="";
+select * from famous_people;
+delete from famous_people where first_name=null;
+select * from famous_people;
+delete from famous_people where first_name IS NULL
+select * from famous_people;
+delete from famous_people where first_name IS NULL;
+select * from famous_people;
+delete from famous_people where id='8';
+select * from famous_people;
+\q
+\c test_db
+select * from famous_people;
+\q
+\c test_db
+select * from famous_people
+;
+delete from famous_people where id>5;
+select * from famous_people
+;
+\q
+\c test_db
+select * from famous_people
+;
+\q
+\c test_db
+select * from famous_people
+;
+delete from famous_people where id > 5;
+\q
+\c test_db
+select * from famous_people;
+\q
+-l
+;
+--list
+;
+\q
+\h
+CREATE DATABASE card_games
+\c card_games
+CREATE DATABASE card_games;
+\c card_games;
+CREATE DATABASE card_games;
+\c card_games;
+\dt
+\c test_db
+\dt
+\c card_games
+\q
+\c card-games
+\c card-games;
+\c card_games;
+CREATE TABLE users
+\dt
+\q
+\dt
+CREATE ROLE labber WITH LOGIN password 'labber';
+CREATE DATABASE miterm OWNER labber;
+\1
+\q
+\c template1
+CREATE TABLE game_sessions (
+id int,
+game_name varchar(255)
+);
+\dt
+select * from game_sessions
+drop table game_sessions
+\dt
+drop table game_sessions;
+DROP TABLE game_sessions;
+\dt
+CREATE TABLE game_sessions (
+id int NOT NULL,
+game_name,
+adsadsadsadsadsadsa;;;;;;;
+);
+CREATE TABLE game_sessions (
+id int,
+game_name varchar(255),
+PRIMARY KEY (id)
+);
+\dt
+INSERT INTO game_sessions (game_name) VALUES ('BlackJack');
+drop table game_sessions;
+\dt
+CREATE TABLE game_sessions (
+id int NOT NULL,
+game_name varchar(255),
+PRIMARY KEY (id)
+);
+INSERT INTO game_sessions (game_name) VALUES ('BlackJack');
+INSERT INTO game_sessions (id, game_name) VALUES (1, 'BlackJack');
+select * from game_sessions
+;
+CREATE TABLE game_sessions (
+  session_id int NOT NULL AUTO_INCREMENT,
+  game_name varchar(255),
+  PRIMARY KEY (session_id)
+);
+CREATE TABLE game_sessions (
+  session_id SERIAL,
+  game_name varchar,
+  PRIMARY KEY (session_id)
+);
+drop table game_sessions;
+CREATE TABLE game_sessions (
+  session_id SERIAL,
+  game_name varchar,
+  PRIMARY KEY (session_id)
+);
+\dt
+INSERT INTO game_sessions (game_name) VALUES ('BlackJack');
+select * from game_sessions;
+INSERT INTO game_sessions (game_name) VALUES ('Poker');
+INSERT INTO game_sessions (game_name) VALUES ('Poker');
+select * from game_sessions
+;
+delete * from game_sessions;
+\q
+\c template1
+delete from game_sessions;
+\dt
+CREATE TABLE players (
+  username varchar,
+  session_id int,
+  host BOOLEAN
+);
+\dt
+CREATE TABLE suits (
+  suit_name varchar,
+  value int,
+  PRIMARY KEY (suit_name)
+);
+\dt
+\q
+\c template1
+\dt
+CREATE TABLE games (
+  game_name varchar,
+  card_1 int,
+  card_2 int,
+  card_3 int,
+  card_4 int,
+  card_5 int,
+  card_6 int,
+  card_7 int,
+  card_8 int,
+  card_9 int,
+  card_10 int,
+  card_j int,
+  card_q int,
+  card_k int,
+  card_a int,
+  card_joker int,
+);
+CREATE TABLE games (
+  game_name varchar,
+  card_1 int,
+  card_2 int,
+  card_3 int,
+  card_4 int,
+  card_5 int,
+  card_6 int,
+  card_7 int,
+  card_8 int,
+  card_9 int,
+  card_10 int,
+  card_j int,
+  card_q int,
+  card_k int,
+  card_a int,
+  card_joker int
+);
+\dt
+CREATE TABLE users (
+  username varchar,
+  password varchar,
+  wins int,
+  PRIMARY KEY (username)
+);
+\dt
+drop table users
+;
+CREATE TABLE users (
+  username varchar,
+  password varchar,
+  wins int,
+  PRIMARY KEY (username)
+;
+);
+CREATE TABLE users (
+  username varchar,
+  password varchar,
+  wins int DEFAULT 0,
+  PRIMARY KEY (username)
+);
+\dt
+insert into users (username, password) values ('deadpool', 'xmen');
+select * from users
+;
+delete from users;
+\dt
+insert into users (username, password) values ('deadpool', 'xmen');
+select * from users
+;
+delete from users;
+select * from users
+;
+select * from games;
+\q
+\c test_db
+create table milestones (
+);
+\dt
+\q
+\c test-DB
+\c test_DB
+\c test_DB
+\c test_db
+drop table milestones;
+\q
+\c test_db
+\dt
+select * from users
+;
+\q
+\c
+\c test_db
+select * from users
+;
+knex migrate:rollback
+;
+\q
+\c test_db
+\dt
+\q
+\c test_db
+\dt
+select * from milestones
+;
+\d milestones
+\q
+\c template1
+\dt
+/q
+;
+\q
+\c template1
+select * from games;
+\q
+\c template1
+\dt
+select * from games;
+\q
+\d
+\d
+\l+
+\d
+drop table game_sessions;
+drop table game_sessions_session_id_seq;
+drop table games;
+drop table migrations;
+drop table migrations_lock;
+drop table players;
+drop table suits;
+drop table users;
+\d
+\c card_games
+CREATE TABLE game_sessions (
+  session_id SERIAL,
+  game_name varchar,
+  PRIMARY KEY (session_id)
+);
+CREATE TABLE players (
+  username varchar,
+  session_id int,
+  host BOOLEAN
+);
+CREATE TABLE cards (
+  card_name varchar,
+  suit varchar
+);
+CREATE TABLE suits (
+  suit_name varchar,
+  value int,
+  PRIMARY KEY (suit_name)
+);
+CREATE TABLE games (
+  game_name varchar,
+  card_1 int,
+  card_2 int,
+  card_3 int,
+  card_4 int,
+  card_5 int,
+  card_6 int,
+  card_7 int,
+  card_8 int,
+  card_9 int,
+  card_10 int,
+  card_j int,
+  card_q int,
+  card_k int,
+  card_a int,
+  card_joker int
+);
+CREATE TABLE users (
+  username varchar,
+  password varchar,
+  wins int DEFAULT 0,
+  PRIMARY KEY (username)
+);
+INSERT INTO game_sessions (game_name) VALUES ('Poker');
+INSERT INTO game_sessions (game_name) VALUES ('BlackJack');
+select * from games;
+select * from games_sessions;
+select * from game_sessions;
+\q
+\d
+\q
+\q
+dropdb card_games
+;
+/h
+;
+\h
+DROP DATABASE card_games
+;
+\c card_games
+\c
+\c vagrant
+DROP DATABASE card_games
+;
+\h
+ps aux | grep card_games
+;
+\q
+\d
+\dt
+\c test_db
+\d
+\c template1
+\d
+\dt
+\c card_games
+\q
+create database card_games OWNER labber;
+\q
+\dt
+select * from users
+;
+insert into users (
+username, password)
+values ('test,'lol');
+'
+, 'lolz');
+insert into users (username, password) values ('test', 'lolsz');
+select * all from users;
+select * from users;
+delete from table users
+;
+delete from users
+;
+\q
+select * from users;
+\q
+\d
+\c card_games
+\d
+\dt
+\dt
+\c template1
+\dt
+\q
+\dt
+select * from game_sessions
+;
+\q
+insert into game_sessions (game_name) values ('Poker');
+\q
+\dt
+/ld
+;
+\help
+select * from cards;
+INSERT INTO cards (rank, suit)
+  VALUES ('2', 'diamonds');
+INSERT INTO cards (rank, suit)
+  VALUES ('2', 'clubs');
+INSERT INTO cards (rank, suit)
+  VALUES ('2', 'hearts');
+INSERT INTO cards (rank, suit)
+  VALUES ('2', 'spades');
+INSERT INTO cards (rank, suit)
+  VALUES ('3', 'diamonds');
+INSERT INTO cards (rank, suit)
+  VALUES ('3', 'clubs');
+INSERT INTO cards (rank, suit)
+  VALUES ('3', 'hearts');
+INSERT INTO cards (rank, suit)
+  VALUES ('3', 'spades');
+INSERT INTO cards (rank, suit)
+  VALUES ('4', 'diamonds');
+INSERT INTO cards (rank, suit)
+  VALUES ('4', 'clubs');
+INSERT INTO cards (rank, suit)
+  VALUES ('4', 'hearts');
+INSERT INTO cards (rank, suit)
+  VALUES ('4', 'spades');
+INSERT INTO cards (rank, suit)
+  VALUES ('5', 'diamonds');
+INSERT INTO cards (rank, suit)
+  VALUES ('5', 'clubs');
+INSERT INTO cards (rank, suit)
+  VALUES ('5', 'hearts');
+INSERT INTO cards (rank, suit)
+  VALUES ('5', 'spades');
+INSERT INTO cards (rank, suit)
+  VALUES ('6', 'diamonds');
+INSERT INTO cards (rank, suit)
+  VALUES ('6', 'clubs');
+INSERT INTO cards (rank, suit)
+  VALUES ('6', 'hearts');
+INSERT INTO cards (rank, suit)
+  VALUES ('6', 'spades');
+INSERT INTO cards (rank, suit)
+  VALUES ('7', 'diamonds');
+INSERT INTO cards (rank, suit)
+  VALUES ('7', 'clubs');
+INSERT INTO cards (rank, suit)
+  VALUES ('7', 'hearts');
+INSERT INTO cards (rank, suit)
+  VALUES ('7', 'spades');
+INSERT INTO cards (rank, suit)
+  VALUES ('8', 'diamonds');
+INSERT INTO cards (rank, suit)
+  VALUES ('8', 'clubs');
+INSERT INTO cards (rank, suit)
+  VALUES ('8', 'hearts');
+INSERT INTO cards (rank, suit)
+  VALUES ('8', 'spades');
+INSERT INTO cards (rank, suit)
+  VALUES ('9', 'diamonds');
+INSERT INTO cards (rank, suit)
+  VALUES ('9', 'clubs');
+INSERT INTO cards (rank, suit)
+  VALUES ('9', 'hearts');
+INSERT INTO cards (rank, suit)
+  VALUES ('9', 'spades');
+INSERT INTO cards (rank, suit)
+  VALUES ('10', 'diamonds');
+INSERT INTO cards (rank, suit)
+  VALUES ('10', 'clubs');
+INSERT INTO cards (rank, suit)
+  VALUES ('10', 'hearts');
+INSERT INTO cards (rank, suit)
+  VALUES ('10', 'spades');
+INSERT INTO cards (rank, suit)
+  VALUES ('J', 'diamonds');
+INSERT INTO cards (rank, suit)
+  VALUES ('J', 'clubs');
+INSERT INTO cards (rank, suit)
+  VALUES ('J', 'hearts');
+INSERT INTO cards (rank, suit)
+  VALUES ('J', 'spades');
+INSERT INTO cards (rank, suit)
+  VALUES ('Q', 'diamonds');
+INSERT INTO cards (rank, suit)
+  VALUES ('Q', 'clubs');
+INSERT INTO cards (rank, suit)
+  VALUES ('Q', 'hearts');
+INSERT INTO cards (rank, suit)
+  VALUES ('Q', 'spades');
+INSERT INTO cards (rank, suit)
+  VALUES ('K', 'diamonds');
+INSERT INTO cards (rank, suit)
+  VALUES ('K', 'clubs');
+INSERT INTO cards (rank, suit)
+  VALUES ('K', 'hearts');
+INSERT INTO cards (rank, suit)
+  VALUES ('K', 'spades');
+INSERT INTO cards (rank, suit)
+  VALUES ('A', 'diamonds');
+INSERT INTO cards (rank, suit)
+  VALUES ('A', 'clubs');
+INSERT INTO cards (rank, suit)
+  VALUES ('A', 'hearts');
+INSERT INTO cards (rank, suit)
+  VALUES ('A', 'spades');
+INSERT INTO cards (rank, suit)
+  VALUES ('JOKER', 'NULL');
+select * from cards;
+\q
+\c card_games
+\dt
+select * from users;
+select * from players;
+select * from game_sessions;
+\q
+\c card_games
+select * from players
+;
+q
+;
+\q
+\c card_games
+select * from players
+;
+\q
+select * from cards;
+\q
+\dt
+select * from game_suits
+;
+\q
+select * from game_suits
+;
+\q
+select * from card_games
+;
+select * from game_suits;
+knex seed:make game_ranks_seed
+;
+\q
+select * from game_ranks
+;
+\q
+select * from game_ranks;
+\q
+\dt
+\q
+\dt
+select * from players;
+\dt
+\q
+select * from users
+;
+\q
+\c card_games
+insert into users(username, password) values ('vincent', 'squirrels');
+select * from users;
+\q
+select * from users;
+\q
+\q
+select * from users;
+\q
+select * from users;
+\q
+select * from users;
+\q
+\dt
+select * from game_sessions
+;
+select * from players
+;
+select * from players join game_sessions;
+select * from players join game_sessions ON players.session_id = game_sessions.session_id;
+\q
+\dt players
+\d players
+\d game_sessions
+insert into game_sessions(game_name) values ('goofspiel');
+select * from game_sessions;
+insert into players (username, session_id, player_is_host) values ('vincent', 1, true);
+select * from players;
+insert into players (username, session_id, player_is_host) values ('andrew', 1, false);
+select * from players;
+insert into players (username, session_id, player_is_host) values ('vincent', 2, false);
+insert into players (username, session_id, player_is_host) values ('faisal', 2, true);
+select * from players;
+\q
+select * from game_sessions
+;
+\q
+select * game_sessions
+;
+select * from game_sessions
+;
+insert into game_sessions(game_name) values ('goofspiel')
+;
+select * from game_sessions
+;
+insert into game_sessions(session_id, username, player_is_host) values (2, vincent, true);
+insert into players(session_id, username, player_is_host) values (2, vincent, true);
+insert into players(session_id, username, player_is_host) values (2, 'vincent', true);
+select * from players;
+delete from players where (username = 'vincent && player_is_host = true);
+'
+;
+)
+;
+delete from players where (username = 'vincent' && player_is_host = true);
+delete from players where (username = 'vincent' && player_is_host is true);
+delete from players where (username = 'vincent' && player_is_host = true);
+delete from players where username = 'vincent' && player_is_host = true;
+delete from players where username = 'vincent' && player_is_host = t;
+delete from players where (username = 'vincent' && player_is_host = t);
+delete from players where (username = 'vincent' && player_is_host = 'true');
+delete from players where (username = 'vincent' AND player_is_host = true);
+insert into players (username, session_id, player_is_host) values ('vincent', 1, true);
+select * from playersl
+;
+select * from players;
+select * from game_sessions
+;
+\q
+\h
+\?
+\d
+\s reviews
