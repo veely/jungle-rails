@@ -27,11 +27,24 @@
     </div>
 
     <div class="reviews">
+      <% if current_user %>
+        <%= form_for [@product, Review.new] do |f| %>
+          <%= f.label :description %><br>
+          <%= f.text_area :description, size: "60x5" %><br>
+          <%= f.label :rating %>
+          <%= f.select :rating, [1, 2, 3, 4, 5] %><br>
+          <%= f.submit "Submit Review" %>
+        <% end %>
+      <% end %>
+
       <h1>Customer Reviews</h1>
       <ul>
-        <% @reviews.each do |review| %>
+        <% @reviews.reverse.each do |review| %>
           <li>
-            <div><b>Description:</b> <%= review.description %> Rating: <%= review.rating %>/5</div>
+            <div><b>Review by:</b> <%= review.user.name %> <b>Description:</b> <%= review.description %> <b>Rating:</b> <%= review.rating %>/5
+
+              <% end %>
+            </div>
           </li>
         <% end %>
       </ul>
