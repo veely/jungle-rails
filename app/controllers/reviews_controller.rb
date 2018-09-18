@@ -5,12 +5,17 @@ class ReviewsController < ApplicationController
     review = product.reviews.create(review_params)
     review.user = current_user
 
-    puts review.inspect
     if review.save
       redirect_to product_path(product)
     else
       redirect_to product_path(product)
     end
+  end
+
+  def destroy
+    puts "PARAMS: " + params[:id]
+    Review.find_by(id: params[:id]).destroy
+    redirect_to "/products/#{params[:product_id]}"
   end
 
   private
