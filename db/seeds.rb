@@ -143,6 +143,13 @@ Review.create!([{
   user_id: 'John',
   description: 'Very good product. Would recommend.',
   rating: 4
-}])
+},
+{
+  product_id: 7,
+  user_id: 'Joe',
+  description: 'It broke on the first day of use. Bad quality.',
+  rating: 1
+}
+])
 
 puts "DONE!"
